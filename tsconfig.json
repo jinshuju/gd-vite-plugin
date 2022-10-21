@@ -1,0 +1,19 @@
+{
+  "workers": 4,
+  "useTypescriptIncrementalApi": true,
+  "compilerOptions": {
+    "types": ["node"],
+    "sourceMap": true,
+    "target": "es2018",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist"
+  }
+}
