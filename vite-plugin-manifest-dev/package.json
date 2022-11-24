@@ -8,6 +8,12 @@
     "ver": "npm version patch",
     "pub": "npm run build && npm run ver && npm publish"
   },
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md",
+    "README.md"
+  ],
   "author": "golddata",
   "license": "ISC",
   "peerDependencies": {

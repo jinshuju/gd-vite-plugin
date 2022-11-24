@@ -1,12 +1,12 @@
 {
   "name": "@gd-uikit/vite-plugin-ignore",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "vite ignore react component",
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
     "ver": "npm version patch",
-    "pub": "npm run build && npm run ver && npm publish && npm run genlog"
+    "pub": "npm run build && npm run ver && npm publish "
   },
   "author": "",
   "license": "ISC",

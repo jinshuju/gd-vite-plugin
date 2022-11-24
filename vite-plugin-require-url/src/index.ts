@@ -16,9 +16,11 @@ export default function vitePluginRequireUrl(
     name: "vite-plugin-require-url",
     async transform(code: string, id: string) {
       let newCode = code;
+      let inputMap = null;
       if (fileRegex.test(id)) {
         const ast = parser.parse(code, {
           sourceType: "module",
+          sourceFilename: id,
         });
         traverse(ast, {
           Identifier(path) {
@@ -65,12 +67,18 @@ export default function vitePluginRequireUrl(
             }
           },
         });
-        const output = generate(ast);
+        const output = generate(
+          ast,
+          { sourceMaps: true, sourceFileName: id },
+          code
+        );
+
         newCode = output.code;
+        inputMap = output.map
       }
       return {
         code: newCode,
-        map: null, // TODO:
+        map: inputMap, // TODO:
       };
     },
   };
